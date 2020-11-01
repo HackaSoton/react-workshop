@@ -29,7 +29,11 @@ function App() {
       <div id="search-results-container">
         {searchResults.map((result) => (
           <div className="search-result">
-            <img src={result.avatar} className="search-result-image" />
+            <img
+              src={result.avatar}
+              alt={`Headshot of ${result.label}`}
+              className="search-result-image"
+            />
             <span>{result.label}</span>
           </div>
         ))}
