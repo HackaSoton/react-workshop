@@ -1,0 +1,39 @@
+#search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+}
+
+#search-bar,
+#search-button {
+  height: 25%;
+}
+
+#search-results-container {
+  margin-top: 1%;
+  margin-left: 5%;
+  padding: 0;
+  border: 1px solid black;
+  height: 80%;
+  width: 90%;
+  overflow-y: scroll;
+}
+
+.search-result {
+  float: left;
+  text-align: center;
+  width: 23%;
+  max-width: 230px;
+  height: 15%;
+  margin: 1%;
+  background-color: cadetblue;
+}
+
+.search-result-image {
+  width: 80%;
+  height: 75%;
+  margin-top: 5%;
+  margin-left: 10%;
+  display: block;
+}
