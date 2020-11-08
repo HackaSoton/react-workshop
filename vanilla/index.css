@@ -10,31 +10,39 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid black;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  background-color: white;
+  top: 0;
   height: 10%;
 }
 
-#search-bar,
-#search-button {
+#search-bar {
   height: 25%;
+  width: 30%;
+  text-align: center;
 }
 
 #search-results-container {
   margin-top: 1%;
   margin-left: 5%;
   padding: 0;
-  border: 1px solid black;
-  height: 80%;
+  border-radius: 25px;
+  background-color: lightgray;
+  min-height: 80%;
   width: 90%;
-  overflow-y: scroll;
+  overflow: auto;
 }
 
 .search-result {
-  float: left;
+  display: inline-block;
   text-align: center;
   width: 23%;
-  max-width: 230px;
   height: 15%;
-  margin: 1%;
+  margin-top: 1%;
+  margin-left: 2%;
+  margin: 1% 1% 0% 1%;
   background-color: cadetblue;
 }
 

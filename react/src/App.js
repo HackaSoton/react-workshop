@@ -8,7 +8,6 @@ const celebrities = addAvatars(getCelebrities());
 
 function App() {
   const [searchString, setSearchString] = useState("");
-  const [searchResults, setSearchResults] = useState(celebrities);
 
   return (
     <>
@@ -18,16 +17,9 @@ function App() {
           type="search"
           id="search-bar"
         />
-        <button
-          onClick={() => search(searchString, setSearchResults)}
-          type="button"
-          id="search-button"
-        >
-          Search
-        </button>
       </div>
       <div id="search-results-container">
-        {searchResults.map((result) => (
+        {search(searchString).map((result) => (
           <div className="search-result">
             <img
               src={result.avatar}
@@ -42,11 +34,12 @@ function App() {
   );
 }
 
-function search(searchString, setSearchResults) {
-  const results = celebrities.filter(
-    ({ label }) => label.toLowerCase().indexOf(searchString) !== -1
+function search(searchString) {
+  const stringToFind = searchString.toLowerCase().trim();
+
+  return celebrities.filter(
+    ({ label }) => label.toLowerCase().indexOf(stringToFind) !== -1
   );
-  setSearchResults(results);
 }
 
 export default App;

@@ -2,8 +2,7 @@ const celebrities = addAvatars(getCelebrities());
 
 function search() {
   const searchBar = document.querySelector("#search-bar");
-  const searchString = searchBar.value.toLowerCase();
-  console.log(searchString);
+  const searchString = searchBar.value.toLowerCase().trim();
 
   const searchResult = celebrities.filter(
     ({ label }) => label.toLowerCase().indexOf(searchString) !== -1
@@ -23,7 +22,7 @@ function showResults(results) {
     avatar.src = result.avatar;
     card.appendChild(avatar);
 
-    const label = document.createElement("span");
+    const label = document.createElement("p");
     label.textContent = result.label;
     card.appendChild(label);
 
